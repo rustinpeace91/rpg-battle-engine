@@ -5,8 +5,9 @@ var weapon = {
         weight: 0,
         toAttack: 0,
         range: 1,
-        damage: dice.throwD4() / 2 
-
+        damage: function(){
+            return parseInt(dice.throwD4() / 2)
+        }
     },
     longsword: {
         name: "longsword",
@@ -14,7 +15,9 @@ var weapon = {
         weight: 5,
         toAttack: 0,
         range: 1,
-        damage: dice.throwD8() 
+        damage: function() {
+           return dice.throwD8()
+        }
 
     },
 
@@ -24,7 +27,9 @@ var weapon = {
         weight:10,
         toAttack:0,
         range:1,
-        damage: dice.throwD4() + 2
+        damage: function(){
+          return dice.throwD4() + 2
+        }
     },
 
     spear: {
@@ -33,6 +38,9 @@ var weapon = {
         weight:4,
         toAttack: 1,
         range: 2,
-        damage: dice.throwD6()
+        damage: function(){
+            return dice.throwD6()
+        }
+        
     }
 };

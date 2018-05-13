@@ -3,101 +3,71 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Star Wars RPG</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
-    <!---BOOTSTRAP 4-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <script src="assets/javascript/dice.js"></script>
+    <!--<script src="assets/javascript/modifiers.js"></script>-->
+    <script src="assets/javascript/weapons.js"></script>
+    <script src="assets/javascript/armor.js"></script>
+    <script src="assets/javascript/character.js"></script>
+    <script src="assets/javascript/combat.js"></script>
+    <!---<script src="assets/javascript/testinit.js"></script>-->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
 </head>
 <body>
-
-
-    <div id = "all-content" class = "container">
-        <div class = "row">
-            <div class = "col-md-6">
-                <div id = "main-content">
-                    <div class = "row">
-                        <div class = "col-md-12">
-                            <h1>STAR WARS RPG</h1>
-                            <p id = "pick-char" class = "char-label">Jedis(pick your character)</p> 
-                            <div id = "start-characters">
-
-                                <div id = "luke-skywalker" class = "character good" >
-                                    <img class = "jedi" src = "assets/images/luke-skywalker.jpg">
-                                    <p class = "health-bar">60</p>
-                        
-                                </div>
-                                <div id = "obi-wan" class = "character good">
-                                    <img class = "jedi" src = "assets/images/obi-wan.jpg">
-                                    <p class = "health-bar" class ="id">80</p>
-                                </div>
-
-                                <div id = "darth-vader" class = "character">
-                                    <img class = "jedi" src = "assets/images/darth-vader.jpg">
-                                    <p class = "health-bar">100</p>
-
-                                </div>
-                                <div id = "the-emperor" class = "character">
-                                        <img class = "jedi" src = "assets/images/the-emperor.jpg">
-                                        <p class = "health-bar">120</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "row">
-                        <div class = "col-md-6">
-                            <div id = "your-character">
-                                <p class = "char-label">Your character: <span id = "hit" class = "hidden">took <span id = "damage" class = "hidden">0</span> damage </span><span id = "miss" class = "hidden">dodged out of the way</span></p>
-                                <img class = "splat hidden" src = "assets/images/runesplat.png">
-                            </div>
-                        </div>
-                        <div class = "col-md-6">
-                            <div id = "fight-section">
-                                <p class = "char-label">Current Enemy: <span id = "hit" class = "hidden">took <span id = "damage" class = "hidden">0</span> damage </span><span id = "miss" class = "hidden">dodged out of the way</span></p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                        <button id = "attack" class = "hidden">Attack</button>
-                        <button id = "reset" class = "hidden">Reset Game</button>
-                        <p class = "char-label">Your enemies:</p>
-                        <div id = "enemies">
-
-
-                        </div>
-
-
-                    </div>
-            </div>
-            <div class = "col-md-6">
-                    <div id = "fight-console-title">
-                            <p>Fight Console</p>
-                        </div>
-                    <div id = "fight-console">
-
-
-                    </div>
-            </div>
-
-        </div>
-        <div class = "row">
-            <div class "col-md-12">
-                <div id = "instructions">
-                        <h3>instructions:</h3>
-                        <p>select a character first</p>
-                        <p>then select a character to attack</p>
-                        <p>defeat all enemies to win the game</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="assets/javascript/game.js"></script>
+    <h2>For now, Open the Console and Click the fight button to attack your enemy</h2>
+    <button id = "fight">fight</button>
 </body>
+<!--The following is for temporary testing purposes only.  WARNING: Sloppy code-->
+<script>
+    var weapons = ["unarmed", "longsword", "club", "spear"]
+    var enemy;
+    var enemyHD;
+    var enemyHP;
+    var enemyAC;
+    var player;
+    var playerHP;
+    var playerAC;
+    function init(){
+        
+        player = new Character("player", true, 12, 14, {"yp":"tp"});
+        var selector = dice.throwD4() - 1;
+        player.weapon = weapon[weapons[selector]];
+        enemyHD = 3;
+        enemyHP = (dice.throwD6()) * enemyHD;
+        enemy = new Character("bad guy", false, 12, enemyHP, {});
+        selector = dice.throwD4() - 1;
+        enemy.weapon = weapon[weapons[selector]];
+        console.log(player);
+        console.log(enemy);
+        console.log("Youve spawned with " + player.HP + " hit points armed with a " + player.weapon.name);
+        console.log("In front of you stands a " + enemy.name + " with a " + enemy.weapon.name);
+
+
+    };
+
+
+
+    init();
+    document.getElementById("fight").addEventListener("click", function(event){
+
+            combat.fight(player,enemy);
+            if(player.alive === false){
+                init();
+            }else if (enemy.alive === false){
+                enemyHP = (dice.throwD6()) * enemyHD;
+                enemy = new Character("bad guy", false, 12, enemyHP, {});
+                selector = dice.throwD4() - 1;
+                enemy.weapon = weapon[weapons[selector]];
+                console.log(enemy);
+                console.log("a new bad guy appears");
+                console.log("In front of you stands a " + enemy.name + " with a " + enemy.weapon.name);
+            }
+        
+    });
+
+    
+        
+        </script>
 </html>
