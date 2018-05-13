@@ -13,12 +13,43 @@
     <script src="assets/javascript/character.js"></script>
     <script src="assets/javascript/combat.js"></script>
     <!---<script src="assets/javascript/testinit.js"></script>-->
+    <style>
+            #box-thing * {
+                max-width:500px;
+                text-align:center;
+            }
+            #horizontal-thing{
+                display:inline-flex;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+            button{
+                padding:8px 14px;
+                font-size:18px;
+            }
+
+    </style>
 
 </head>
 <body>
-    <h2>For now, Open the Console and Click the fight button to attack your enemy</h2>
-    <button id = "fight">fight</button>
+    <div id = "box-thing">
+        <div id = "horizontal-thing">
+            <img src = "assets/images/knight.jpg">
+            <h1>Welcome to Dungeon.js</h1>
+            <img src = "assets/images/goblin.jpg">
+            
+        </div>
+
+    <div id = "subtext"><em>you are being punished....for your deeds!</em></div>
+    <h4>For now, <a href = "https://javascript.info/devtools" target = "_blank">open the developer console in your browser</a> and Click the fight button to attack your enemy</h4>
+    <div stlye = "text-align:center">
+        <button id = "fight">fight</button>
+    </div>
+    </div>
+
 </body>
+
+
 <!--The following is for temporary testing purposes only.  WARNING: Sloppy code-->
 <script>
     var weapons = ["unarmed", "longsword", "club", "spear"]
