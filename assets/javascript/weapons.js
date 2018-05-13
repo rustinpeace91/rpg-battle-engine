@@ -1,4 +1,13 @@
 var weapon = {
+    unarmed: {
+        name: "unarmed",
+        type: "punching",
+        weight: 0,
+        toAttack: 0,
+        range: 1,
+        damage: dice.throwD4() / 2 
+
+    },
     longsword: {
         name: "longsword",
         type: "slashing",

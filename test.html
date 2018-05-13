@@ -9,50 +9,48 @@
     <script src="assets/javascript/dice.js"></script>
     <!--<script src="assets/javascript/modifiers.js"></script>-->
     <script src="assets/javascript/weapons.js"></script>
-    <!--<script src="assets/javascript/armor.js"></script>-->
+    <script src="assets/javascript/armor.js"></script>
     <script src="assets/javascript/character.js"></script>
-    <script>
-    var player = new Character("player", true, 12, 14, {"yp":"tp"});
-    player.weapon = weapon.longsword;
+    <script src="assets/javascript/combat.js"></script>
 
-
-
-    var enemy = new NPC("bad guy", 12, 13);
-    console.log(player);
-    console.log(enemy);
-    enemy.weapon = weapon.club;
-
-    function attack(attacker, defender){
-        var roll = dice.throwD20() + attacker.toAttack + attacker.weapon.toAttack;
-        console.log(roll);
-        if(roll >= defender.AC){
-            var damage = attacker.weapon.damage;
-            console.log(attacker.name + " has hit " + defender.name + " for " + damage+ " damage");
-            defender.takeHit(damage);
-        } else {
-            console.log("missed");
-        };
-        console.log(defender.name + " has " + defender.HP + " HP left");
-    };
-
-    function fight(player,enemy){
-        attack(player,enemy);
-        if(enemy.alive === true){
-            attack(enemy,player);
-        };
-    }
-
-
-
-    
-    
-    
-    
-    </script>
 
 </head>
 <body>
-    <h2>For now. Open up the console window and type "fight(player,enemy);" to begin</h2>
-    
+    <h2>For now. Open the Console and Click to fight</h2>
+    <button id = "fight">fight</button>
 </body>
+<script>
+    var enemy;
+    var enemyHD;
+    var enemyHP;
+    var player;
+    function init(){
+        player = new Character("player", true, 12, 14, {"yp":"tp"});
+        player.weapon = weapon.longsword;
+    
+        enemyHD = 3;
+        enemyHP = (dice.throwD6()) * enemyHD;
+        enemy = new Character("bad guy", false, 12, 13, {});
+        console.log(player);
+        console.log(enemy);
+        enemy.weapon = weapon.club;
+    };
+
+    init();
+    document.getElementById("fight").addEventListener("click", function(event){
+
+            combat.fight(player,enemy);
+            if(player.alive === false){
+                init();
+            }else if (enemy.alive === false){
+                enemy = new Character("bad guy", false, 12, 13, {});
+                console.log("a new bad guy appears");
+                console.log(enemy);
+            }
+        
+    });
+
+    
+        
+        </script>
 </html>
