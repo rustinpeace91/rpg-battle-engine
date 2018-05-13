@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <script src="assets/javascript/dice.js"></script>
+    <!--<script src="assets/javascript/modifiers.js"></script>-->
+    <script src="assets/javascript/weapons.js"></script>
+    <!--<script src="assets/javascript/armor.js"></script>-->
+    <script src="assets/javascript/character.js"></script>
+    <script>
+    var player = new Character("player", true, 12, 14, {"yp":"tp"});
+    player.weapon = weapon.longsword;
+
+
+
+    var enemy = new NPC("bad guy", 12, 13);
+    console.log(player);
+    console.log(enemy);
+    enemy.weapon = weapon.club;
+
+    function attack(attacker, defender){
+        var roll = dice.throwD20() + attacker.toAttack + attacker.weapon.toAttack;
+        console.log(roll);
+        if(roll >= defender.AC){
+            var damage = attacker.weapon.damage;
+            console.log(attacker.name + " has hit " + defender.name + " for " + damage+ " damage");
+            defender.takeHit(damage);
+        } else {
+            console.log("missed");
+        };
+        console.log(defender.name + " has " + defender.HP + " HP left");
+    };
+
+    function fight(player,enemy){
+        attack(player,enemy);
+        if(enemy.alive === true){
+            attack(enemy,player);
+        };
+    }
+
+
+
+    
+    
+    
+    
+    </script>
+
+</head>
+<body>
+    <h2>For now. Open up the console window and type "fight(player,enemy);" to begin</h2>
+    
+</body>
+</html>
