@@ -26,5 +26,6 @@
                 console.log(player.name + " has " + player.HP + " HP left");
                 console.log(enemy.name + " has " + enemy.HP + " HP left");
             }
+            console.log("-----------------------------------------------------------------------")
         }
     };

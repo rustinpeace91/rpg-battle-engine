@@ -1,4 +1,4 @@
-var Character = function(name, main, baseAC, HP, stats){
+var Character = function(name, main, baseAC, HP,){
     this.name = name;
     this.main = main;
     //DEFENSIVE INFORMATION//
@@ -12,7 +12,7 @@ var Character = function(name, main, baseAC, HP, stats){
     this.toAttack = this.weapon.toAttack;
     //ABILITIES//
         //not developed yet;
-    this.stats = stats;
+        //this.stats = {};
     //LEVEL PROGRESSION//
     this.exp = 0;
     this.level = 1;
@@ -29,7 +29,7 @@ var Character = function(name, main, baseAC, HP, stats){
     };
     this.takeHit = function(damage){
         this.HP -= damage;
-        if(this.HP < 0){
+        if(this.HP <= 0){
             this.alive = false;
             console.log(this.name + " has died");
         }

@@ -62,12 +62,12 @@
     var playerAC;
     function init(){
         
-        player = new Character("player", true, 12, 14, {"yp":"tp"});
+        player = new Character("player", true, 12, 14);
         var selector = dice.throwD4() - 1;
         player.weapon = weapon[weapons[selector]];
         enemyHD = 3;
         enemyHP = (dice.throwD6()) * enemyHD;
-        enemy = new Character("bad guy", false, 12, enemyHP, {});
+        enemy = new Character("bad guy", false, 12, enemyHP);
         selector = dice.throwD4() - 1;
         enemy.weapon = weapon[weapons[selector]];
         console.log(player);
@@ -88,7 +88,7 @@
                 init();
             }else if (enemy.alive === false){
                 enemyHP = (dice.throwD6()) * enemyHD;
-                enemy = new Character("bad guy", false, 12, enemyHP, {});
+                enemy = new Character("bad guy", false, 12, enemyHP,);
                 selector = dice.throwD4() - 1;
                 enemy.weapon = weapon[weapons[selector]];
                 console.log(enemy);
