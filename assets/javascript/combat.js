@@ -1,13 +1,13 @@
    var combat = {
         attack: function(attacker, defender){
             var roll = dice.throwD20() + attacker.toAttack;
-            //console.log(attacker.name + " rolled " + roll +" to hit" );
+            //dom.updateConsole(attacker.name + " rolled " + roll +" to hit" );
             if(roll >= defender.AC){
                 var damage = attacker.weapon.damage();
-                console.log(attacker.name + " has hit " + defender.name + " for " + damage+ " damage");
+                dom.updateConsole(attacker.name + " has hit " + defender.name + " for " + damage+ " damage");
                 defender.takeHit(damage);
             } else {
-                console.log(attacker.name + " missed");
+                dom.updateConsole(attacker.name + " missed");
             };
 
         },
@@ -18,15 +18,16 @@
                 this.attack(enemy,player);
 
             } else {
+                dom.updateConsole(enemy.name + " has died")
                 var xpgained = 50 + (2 * enemy.HP);
                 player.exp += xpgained;
-                console.log("player earned "  + xpgained + " exp and has a total of " + player.exp + " exp")
+                dom.updateConsole("player earned "  + xpgained + " exp and has a total of " + player.exp + " exp")
             };
             if(player.alive === true && enemy.alive === true){
-                console.log(player.name + " has " + player.HP + " HP left");
-                console.log(enemy.name + " has " + enemy.HP + " HP left");
+                dom.updateConsole(player.name + " has " + player.HP + " HP left");
+                dom.updateConsole(enemy.name + " has " + enemy.HP + " HP left");
             }
-            console.log("-----------------------------------------------------------------------")
+            dom.updateConsole("-----------------------------------------------------------------------")
         },
 
 
