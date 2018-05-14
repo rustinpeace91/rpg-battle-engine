@@ -6,7 +6,7 @@
     //function that initiates the game
 
 //dom file
-    //performs all the jquery functions 
+    //performs all the frontend functions 
 
 //fight file
     //functions that take two characters as a parameter and do battle
@@ -14,7 +14,11 @@
 //characters file
     //file that create objects from the character constructur
 
+//charactergenfile
+    //generates characters based on alignment, difficulty 
+
 //weapons file
+    //MOSTLY DONE 
 
 //armor file
 
@@ -24,3 +28,5 @@
     //character constructor with all stats
 
 //some way of tracking clicks and display a score out of it. 
+
+//CURRENT TASK: BUILD OUT COMBAT.JS FILE

@@ -11,24 +11,10 @@
     <script src="assets/javascript/weapons.js"></script>
     <script src="assets/javascript/armor.js"></script>
     <script src="assets/javascript/character.js"></script>
+    <script src="assets/javascript/charactergen.js"></script>
     <script src="assets/javascript/combat.js"></script>
-    <!---<script src="assets/javascript/testinit.js"></script>-->
-    <style>
-            #box-thing * {
-                max-width:500px;
-                text-align:center;
-            }
-            #horizontal-thing{
-                display:inline-flex;
-                flex-wrap:wrap;
-                justify-content:center;
-            }
-            button{
-                padding:8px 14px;
-                font-size:18px;
-            }
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
 
-    </style>
 
 </head>
 <body>
@@ -40,65 +26,18 @@
             
         </div>
 
-    <div id = "subtext"><em>you are being punished....for your deeds!</em></div>
-    <h4>For now, <a href = "https://javascript.info/devtools" target = "_blank">open the developer console in your browser</a> and Click the fight button to attack your enemy</h4>
-    <div stlye = "text-align:center">
-        <button id = "fight">fight</button>
-    </div>
-    </div>
+        <div id = "subtext"><em>you are being punished....for your deeds!</em></div>
+        <h4>For now, <a href = "https://javascript.info/devtools" target = "_blank">open the developer console in your browser</a> and Click the fight button to attack your enemy</h4>
+        <div stlye = "text-align:center">
+            <button id = "fight">fight</button>
+        </div>
+        
+        <div id = "fight-console">
 
+        </div>
+    </div>
+    <script src="assets/javascript/gameloop.js"></script>
 </body>
 
 
-<!--The following is for temporary testing purposes only.  WARNING: Sloppy code-->
-<script>
-    var weapons = ["unarmed", "longsword", "club", "spear"]
-    var enemy;
-    var enemyHD;
-    var enemyHP;
-    var enemyAC;
-    var player;
-    var playerHP;
-    var playerAC;
-    function init(){
-        
-        player = new Character("player", true, 12, 14);
-        var selector = dice.throwD4() - 1;
-        player.weapon = weapon[weapons[selector]];
-        enemyHD = 3;
-        enemyHP = (dice.throwD6()) * enemyHD;
-        enemy = new Character("bad guy", false, 12, enemyHP);
-        selector = dice.throwD4() - 1;
-        enemy.weapon = weapon[weapons[selector]];
-        console.log(player);
-        console.log(enemy);
-        console.log("Youve spawned with " + player.HP + " hit points armed with a " + player.weapon.name);
-        console.log("In front of you stands a " + enemy.name + " with a " + enemy.weapon.name);
-
-
-    };
-
-
-
-    init();
-    document.getElementById("fight").addEventListener("click", function(event){
-
-            combat.fight(player,enemy);
-            if(player.alive === false){
-                init();
-            }else if (enemy.alive === false){
-                enemyHP = (dice.throwD6()) * enemyHD;
-                enemy = new Character("bad guy", false, 12, enemyHP,);
-                selector = dice.throwD4() - 1;
-                enemy.weapon = weapon[weapons[selector]];
-                console.log(enemy);
-                console.log("a new bad guy appears");
-                console.log("In front of you stands a " + enemy.name + " with a " + enemy.weapon.name);
-            }
-        
-    });
-
-    
-        
-        </script>
 </html>

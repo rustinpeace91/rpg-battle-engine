@@ -33,6 +33,14 @@ var dice = {
         var improvedNum = (randomNumber * 20) + 1;
         var final = Math.floor(improvedNum);
         return final;
+    },
+    multiroll(dieType, quantity) {
+        var total = 0;
+        for(i = 0; i < quantity; i++){
+            total += dice[dieType]();
+        }
+        return total;
     }
-}
+};
+
 

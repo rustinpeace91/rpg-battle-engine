@@ -1,14 +1,14 @@
-var Character = function(name, main, baseAC, HP,){
+var CharSheet = function(name, main, HP){
     this.name = name;
     this.main = main;
     //DEFENSIVE INFORMATION//
     this.alive = true;
-    this.baseAC = baseAC;
+    this.baseAC = 10;
     this.HP = HP;
     this.armor = armor.unarmored;
-    this.AC = baseAC + this.armor.toAC;
+    this.AC = this.baseAC + this.armor.toAC;
     //OFFENSIVE INFORMATION
-    this.weapon = weapon.unarmed;
+    this.weapon = armory.weapon.unarmed;
     this.toAttack = this.weapon.toAttack;
     //ABILITIES//
         //not developed yet;
@@ -23,6 +23,10 @@ var Character = function(name, main, baseAC, HP,){
         this.exp += gained;
         
     };
+
+    this.equip = function(gained){
+        this.AC = this.baseAC +this.armor.toAC;
+    }
 
     this.levelup = function(){
  

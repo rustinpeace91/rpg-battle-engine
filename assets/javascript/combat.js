@@ -1,5 +1,5 @@
    var combat = {
-     attack: function(attacker, defender){
+        attack: function(attacker, defender){
             var roll = dice.throwD20() + attacker.toAttack;
             //console.log(attacker.name + " rolled " + roll +" to hit" );
             if(roll >= defender.AC){
@@ -27,5 +27,10 @@
                 console.log(enemy.name + " has " + enemy.HP + " HP left");
             }
             console.log("-----------------------------------------------------------------------")
-        }
+        },
+
+
+    
+
     };
+
