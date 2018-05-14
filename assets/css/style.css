@@ -1,11 +1,21 @@
-#box-thing * {
-    max-width:500px;
+#main-container {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+#gameplay-window, #title-bar, #subtext, h4, .button, #fight-console {
     text-align:center;
 }
-#horizontal-thing{
+
+#gameplay-window {
+    flex-basis:600px;
+}
+
+#title-bar{
     display:inline-flex;
     flex-wrap:wrap;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
 }
 button{
     padding:8px 14px;
@@ -13,11 +23,20 @@ button{
 }
 
 #fight-console {
-    width:100%;
+    width:auto;
     height:200px;
     background:#777777;
     color:yellow;
     overflow:scroll;
     padding:5px;
     line-height:.5em;
+}
+
+#HUD {
+    background:#ebeef4;
+    flex-basis:180px;
+    height:auto;
+    padding:20px;
+    font-size:18px;
+    font-weight:bold;
 }

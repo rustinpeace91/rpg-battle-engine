@@ -27,7 +27,8 @@
                 dom.updateConsole(player.name + " has " + player.HP + " HP left");
                 dom.updateConsole(enemy.name + " has " + enemy.HP + " HP left");
             }
-            dom.updateConsole("-----------------------------------------------------------------------")
+            dom.updateConsole("-----------------------------------------------------------------------");
+            dom.updateHUD();
         },
 
 

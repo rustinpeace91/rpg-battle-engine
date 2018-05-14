@@ -10,7 +10,7 @@ var game = {
         dom.updateConsole("Youve spawned with " + this.player.HP + " hit points armed with a " + this.player.weapon.name);
         dom.updateConsole("In front of you stands a " + this.enemy.name + " with a " + this.enemy.weapon.name)
         
-
+        dom.updateHUD();
         document.getElementById("fight").addEventListener("click", function(event){
 
             combat.fight(game.player,game.enemy);

@@ -19,22 +19,35 @@
 
 </head>
 <body>
-    <div id = "box-thing">
-        <div id = "horizontal-thing">
-            <img src = "assets/images/knight.jpg">
-            <h1>Welcome to Dungeon.js</h1>
-            <img src = "assets/images/goblin.jpg">
+    <div id = "main-container">
+        <div id = "gameplay-window">
+            <div id = "title-bar">
+                <img src = "assets/images/knight.jpg">
+                <h1>Welcome to Dungeon.js</h1>
+                <img src = "assets/images/goblin.jpg">
+                
+            </div>
+
+            <div id = "subtext"><em>you are being punished....for your deeds!</em></div>
+            <h4>For now, you will spawn with a random weapon and a random enemy. Click the fight button to attack your enemy</h4>
+            <div class = "button">
+                <button id = "fight">fight</button>
+            </div>
             
+            <div id = "fight-console">
+
+            </div>
         </div>
 
-        <div id = "subtext"><em>you are being punished....for your deeds!</em></div>
-        <h4>For now, you will spawn with a random weapon and a random enemy. Click the fight button to attack your enemy</h4>
-        <div stlye = "text-align:center">
-            <button id = "fight">fight</button>
-        </div>
-        
-        <div id = "fight-console">
-
+        <div id = "HUD">
+            <p>Name: <span id = "player-name"></span></p>
+            <p>Profession: <span id = "player-profession"></span></p>
+            <p>Defense Rating:<span id = "player-defense-rating"></span></p>
+            <p>HP: <span id = "player-hp"></span></p>
+            <p>Armor: <span id = "player-armor"></span></p>
+            <p>Weapon: <span id = "player-weapon"></span></p>
+            <p>XP: <span id = "player-xp"></span></p>
+            <p>Level: <span id = "player-level"></span></p>
         </div>
     </div>
     <script src="assets/javascript/gameloop.js"></script>
