@@ -1,5 +1,8 @@
 var armory = {
+     // weapons list array, used to select random weapons
      list: [],
+     
+     // weapon objects and their properties
      weapon : {
         unarmed: {
             name: "unarmed",
@@ -7,6 +10,7 @@ var armory = {
             weight: 0,
             toAttack: 0,
             range: 1,
+            // damage is calculated by a roll of the dice
             damage: function(){
                 return parseInt(dice.throwD4() / 2)
             }
@@ -57,6 +61,7 @@ var armory = {
         }
     },
 
+    // populates the weapon list 
     generateList: function(){
         for(var key in this.weapon){
            this.list.push(this.weapon[key].name);
@@ -64,4 +69,5 @@ var armory = {
     }
 };
 
+// runs generate list right when the file is called (will be depreciated later for a cleaner solution )
 armory.generateList();

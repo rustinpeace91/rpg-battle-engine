@@ -29,4 +29,6 @@
 
 //some way of tracking clicks and display a score out of it. 
 
-//CURRENT TASK: BUILD OUT COMBAT.JS FILE
+//Issues: 
+    //right now weapons are selected by their properties, this means they can only be one word, maybe enhance the weapon selections so it selects them by their name
+    //fix ARmor + AC calculation issues

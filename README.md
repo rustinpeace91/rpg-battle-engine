@@ -1,29 +1,40 @@
-# week-4-game
+# DUNGEON.js: A browser based dungeon crawler 
+## Introduction
+Right now this game is simply a turn based combat engine. The user is randomly supplied a weapon and a random number of hitpoints, and can fight multiple enemies who are also randomly generated. The player has health points, a defensive rating (based on armor) and does a certain amount of damage based on the weapon they are carrying. The game engine is heavily based on the D20 System. My main inspiration for this game was the [Pathfinder Rulebook:](https://www.d20pfsrd.com/wp-content/uploads/sites/12/2017/01/PFRPG_SRD.pdf)
 
-##STAR WARS RPG: D20 EDITION
+All assets of the game were taken from [Junior General:](http://www.juniorgeneral.org/)
 
-###introduction
-This version of the star wars RPG has a different combat system. Instead of each attack automatically dealing a definite amount of damage, two dice are rolled to determine whether the attack hits, and then how much damage it does if it's a hit.
+## Under the hood: 
+each attack is determined by a roll of a virtual 20 sided die, and compared to a Defense Rating (or AC in Pathfinder terms),  if the roll is higher than the defense rating, then the attack is a hit. Certain skills and weapons can add a bonus to the attack roll, increasing accuracy. 
 
-There are a multitude of object properties added to make this system works.  
+If the attack hits, then adamge is determined by a roll of the dice based on the weapon carried. 
 
-First, each character now has an Armor Class (AC for short), this number is the number that an opposing character must roll higher than to hit the character.  
+If you defeat an enemy. You gain experience points. If you die, you respawn with a new enemy. 
 
-When an attack is made, a D20 function (a simulation of a 20 sided dice) is run, if the roll is above the AC of the defending character, the attack hits. If not, it misses and no damage is done.  Each character also has a toHit property. This is an additional number that is added to each of their attack rolls. This increases as the player makes more hits, acting as a crude leveling system. 
+here are the weapons I have so far:
 
-Damage is determined by a roll of a D8, plus an additional modifier. This modifier increases each time the player makes a hit. Acting as a leveling system. 
+### Weapons Table:
+| Weapon Name  | Damage Roll |  Accuracy Bonus | 
+| ------------- | ------------- | ------------- |
+| Unarmed | (1D4) / 2  |  0 |  
+| Longsword |  1D8 |  0 |   
+| Club  | 1D4 + 2  |  0 |   
+| Spear | 1D6  |  1 |  0 |
+| Battle Axe | 2D4  |  0 |  
 
 
-###Strategy:
-There are 4 characters. Luke, Obi-Wan, Darth Vader, and the Emperor. 
 
-It is preferable that you play as Luke and Obi-Wan for a challenge, as Darth Vader and the Emperor are meant to be bosses,but any character is playable. 
+### Armor Table:
 
-Obi-Wan: Does little damage but is hard to hit. Is also very accurate. 
+Armor is not currently available to the player, but it is written in the source code
 
-Luke Skywalker: Starts off with Low AC, Low toHit and low base attack. However his base attack increases by a greater number than any other jedi. If luke rolls well in his first fight he will be more powerful than any other Jedi by the end of the game. 
+| Armor Name | Defensive Bonus |
+| ---------- | ------------- |
+| Leather Armor | 1 |
+| Chainmail Armor | 2 |
+| Plate Armor |  3 |
 
-Darth Vader: all around decent stats. Decent AC, attack and toHit. 
+### Future Plans:
 
-Emperor: Easy mode.  Do not play as him if you want a challenge. 
+I hope to eventually turn this into a full fledged dungeon crawling game.  It will be similar to a [RogueLike](https://en.wikipedia.org/wiki/Roguelike) in that upon character death you will have to respawn. I do not plan on making this a full stack app for now so saving your game will probably not be permitted. It will be a short and challenging dungeon crawling experience where you're goal will be to advance as far as possible without dying (which is inevitible). You will pick a profession at the beginning game, which determines your abilities and starting equipment Unlike traditional roguelikes I plan on implimenting a first person view, building upon the same HUD setup I have right now. There will be a HUD on the side, and a console on the bottom.
 

@@ -1,3 +1,5 @@
+//the character constructor of the game.  Includes all the necessary stats that each character has
+
 var CharSheet = function(name, main, HP){
     this.name = name;
     this.main = main;
@@ -19,13 +21,15 @@ var CharSheet = function(name, main, HP){
     this.lastlevel = 1;
     this.nextLevel = this.lastLevel + (this.level * 1000);
 
+    //gained exp is added
     this.gainexp = function(gained){
         this.exp += gained;
         
     };
-
-    this.equip = function(gained){
+    //all stats that are derived from other stats are recalculated
+    this.restat = function(gained){
         this.AC = this.baseAC +this.armor.toAC;
+        this.toAttack = this.weapon.toAttack;
     }
 
     this.levelup = function(){

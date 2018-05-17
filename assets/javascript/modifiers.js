@@ -1,3 +1,7 @@
+// A function that defines the modifers of each ability stats
+// Ability stats are not implimented yet
+// in the future this will determine how the stats effect certain dice rolls
+
 function modifiers(stat) {
     switch(stat){
         case(stat < 2 ):

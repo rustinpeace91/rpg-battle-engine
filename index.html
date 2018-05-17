@@ -6,6 +6,8 @@
     <title>Dungeon.js</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    
+    <!-- GAME SCRIPTS ARE LOADED IN THIS ORDER -->
     <script src="assets/javascript/dice.js"></script>
     <!--<script src="assets/javascript/modifiers.js"></script>-->
     <script src="assets/javascript/weapons.js"></script>
@@ -46,10 +48,12 @@
             <p>HP: <span id = "player-hp"></span></p>
             <p>Armor: <span id = "player-armor"></span></p>
             <p>Weapon: <span id = "player-weapon"></span></p>
+            <p>Accuracy Bonus: <span id = "player-accuracy-bonus"></span></p>
             <p>XP: <span id = "player-xp"></span></p>
             <p>Level: <span id = "player-level"></span></p>
         </div>
     </div>
+    <!--THIS IS WHAT RUNS THE GAME-->
     <script src="assets/javascript/gameloop.js"></script>
 </body>
 
