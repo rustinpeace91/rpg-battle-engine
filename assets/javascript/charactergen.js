@@ -5,6 +5,7 @@
 
 // differentiate between enemies of different difficulty levels
 
+//NOTE: LOOK INTO ES6 CLASSES AND FUNCTIONS. IT WILL HELP A LOT WITH THIS
 
 var charGen = {
     generateHero: function(name, profession, level){
