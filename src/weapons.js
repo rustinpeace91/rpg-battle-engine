@@ -1,4 +1,4 @@
-import dice from "dice";
+import dice from "./dice";
 
 var armory = {
      // weapons list array, used to select random weapons

@@ -1,5 +1,5 @@
 // combat loop: handles both a single attack and a single round of combat between two combatants
-import charactergen from "charactergen";
+import charactergen from "./charactergen";
 
 var combat = {
         attack: function(attacker, defender){

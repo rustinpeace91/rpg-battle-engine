@@ -1,4 +1,4 @@
-import armory from "weapons";
+import armory from "./weapons";
 var armor = {
     unarmored: {
         name: "unarmored",

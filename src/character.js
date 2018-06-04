@@ -1,5 +1,5 @@
 //the character constructor of the game.  Includes all the necessary stats that each character has
-import armor from "armor";
+import armor from "./armor";
 
 var CharSheet = function(name, main, HP){
     this.name = name;
