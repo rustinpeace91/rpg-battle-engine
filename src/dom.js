@@ -1,7 +1,9 @@
 // instead of relying on JQuery for DOM updates I decided to write my own DOM update object. The reason for this is because this game is running these modules entirely on the front end.
 // I thought it would be best to minimalize the amount of code required to run the app. Instead of a library of front end objects and methods, a single file with a few methods does the trick just fine
 // Might rename this to DUO (document update object)
+
 import combat from "./combat";
+import game from "./gameloop";
 var dom = {
     updateConsole: function(input) {
         var node = document.createElement("P");
@@ -26,4 +28,4 @@ var dom = {
     }
 }
 
-module.exports = dom;
+export default dom;

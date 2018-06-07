@@ -7,6 +7,9 @@
 
 //NOTE: LOOK INTO ES6 CLASSES AND FUNCTIONS. IT WILL HELP A LOT WITH THIS
 import CharSheet from "./character";
+import armory from "./weapons";
+import armor from "./armor";
+import dice from "./dice";
 
 var charGen = {
     generateHero: function(name, profession, level){
@@ -66,4 +69,4 @@ var charGen = {
     }
 };
 
-module.exports = charGen;
+export default charGen;

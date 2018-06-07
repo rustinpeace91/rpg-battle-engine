@@ -1,4 +1,5 @@
 import armory from "./weapons";
+
 var armor = {
     unarmored: {
         name: "unarmored",
@@ -20,4 +21,4 @@ var armor = {
     }
 }
 
-module.exports = armor;
+export default armor;

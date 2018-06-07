@@ -1,5 +1,6 @@
 //the character constructor of the game.  Includes all the necessary stats that each character has
 import armor from "./armor";
+import armory from "./weapons";
 
 var CharSheet = function(name, main, HP){
     this.name = name;
@@ -49,7 +50,7 @@ var CharSheet = function(name, main, HP){
 
 
 
-module.export = CharSheet;
+export default CharSheet;
 
 
 //--------------------------------TESTING--------------------------//

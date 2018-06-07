@@ -73,4 +73,4 @@ var armory = {
 
 // runs generate list right when the file is called (will be depreciated later for a cleaner solution )
 
-module.exports = armory;
+export default armory;

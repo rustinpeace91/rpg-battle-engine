@@ -46,7 +46,7 @@ var dice = {
     },
     multiroll(dieType, quantity) {
         var total = 0;
-        for(i = 0; i < quantity; i++){
+        for(var i = 0; i < quantity; i++){
             total += dice[dieType]();
         }
         return total;
@@ -54,4 +54,4 @@ var dice = {
 };
 
 
-module.exports = dice;
+export default dice;
