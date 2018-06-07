@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/rustinpeace91/rpg-battle-engine#readme",
   "devDependencies": {
-    "webpack": "^3.5.5",
-    "webpack-cli": "^3.0.1"
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.3"
   }
 }
