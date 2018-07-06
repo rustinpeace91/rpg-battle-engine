@@ -2,8 +2,8 @@
 // I thought it would be best to minimalize the amount of code required to run the app. Instead of a library of front end objects and methods, a single file with a few methods does the trick just fine
 // Might rename this to DUO (document update object)
 
-import combat from "./combat";
-import game from "./gameloop";
+import combat from "../logic/combat";
+import game from "../logic/gameloop";
 var dom = {
     updateConsole: function(input) {
         var node = document.createElement("P");

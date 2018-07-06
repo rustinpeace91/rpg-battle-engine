@@ -1,7 +1,7 @@
 // main game loop. plan on splitting much of this up into seperate modules or methods, but for now it just runs the combat loop when the user clicks the fight button
 import combat from "./combat";
-import charGen from "./logic/charactergen";
-import dom from "./interface/dom";
+import charGen from "./charactergen";
+import dom from "../interface/dom";
 var game = {
     player: {},
     enemy: {},
