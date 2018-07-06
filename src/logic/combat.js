@@ -1,6 +1,6 @@
 // combat loop: handles both a single attack and a single round of combat between two combatants
 import charGen from "./charactergen";
-import dom from "./dom";
+import dom from "../interface/";
 import dice from "./dice";
 
 var combat = {

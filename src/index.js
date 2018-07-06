@@ -1,4 +1,4 @@
-import armory from "./weapons"
-import game from "./gameloop";
+import armory from "./logic/index"
+import game from "./logic/index";
 armory.generateList();
 game.init();
