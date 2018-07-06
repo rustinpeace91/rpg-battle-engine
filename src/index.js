@@ -1,4 +1,5 @@
-import armory from "./logic/index"
-import game from "./logic/index";
+import game from "./logic";
+import armory from "./logic"
+
 armory.generateList();
 game.init();
