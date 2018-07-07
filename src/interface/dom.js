@@ -25,6 +25,12 @@ var dom = {
         document.getElementById("player-xp").innerHTML = game.player.exp;
         document.getElementById("player-level").innerHTML = game.player.level;
 
+    }, 
+    classButton: function(characterClass){
+        var node = document.createElement("BUTTON");
+        var textNode = document.createTextNode(characterClass);
+        node.appendChild(textNode);
+        document.getElementById("class-panel").appendChild(node);
     }
 }
 

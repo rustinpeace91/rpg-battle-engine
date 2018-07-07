@@ -2,11 +2,15 @@
 import combat from "./combat";
 import charGen from "./charactergen";
 import dom from "../interface/dom";
+import classes from "./classes";
 var game = {
     player: {},
     enemy: {},
     init: function(){
         // when the function runs, both a new player character and a new enemy spawn with random weapons and HP
+        classes.forEach(function(e){
+            dom.classButton(e.name);
+        })
         this.player = charGen.generateHero("player", "random", 1);
         this.enemy = charGen.generateEnemy("bad guy", 3);
         // REMOVE //

@@ -3,6 +3,11 @@
     flex-wrap:wrap;
 }
 
+#class-panel {
+    display:flex;
+    flex-wrap:wrap;
+}
+
 #gameplay-window, #title-bar, #subtext, h4, .button, #fight-console {
     text-align:center;
 }
