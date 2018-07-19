@@ -40,4 +40,4 @@ Armor is not currently available to the player, but it is written in the source 
 
 I hope to eventually turn this into a full fledged dungeon crawling game.  It will be similar to a [RogueLike](https://en.wikipedia.org/wiki/Roguelike) in that upon character death you will have to respawn. I do not plan on making this a full stack app for now so saving your game will probably not be permitted. It will be a short and challenging dungeon crawling experience where you're goal will be to advance as far as possible without dying (which is inevitible). You will pick a profession at the beginning game, which determines your abilities and starting equipment Unlike traditional roguelikes I plan on implimenting a first person view, building upon the same HUD setup I have right now. There will be a HUD on the side, and a console on the bottom.
 
-!(rpg-battle-engine)[https://i.imgur.com/PdqLrd7.png]
+![rpg-battle-engine](https://i.imgur.com/PdqLrd7.png)
