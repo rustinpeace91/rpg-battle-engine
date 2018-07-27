@@ -30,9 +30,11 @@ var dom = {
         var node = document.createElement("BUTTON");
         var textNode = document.createTextNode(characterClass);
         node.appendChild(textNode);
-        node.classList.add("class");
+        node.classList.add("character-class");
         node.setAttribute("data-class", characterClass);
+        node.addEventListener("click", this.classSelected())
         document.getElementById("class-panel").appendChild(node);
+        
     },
     classSelected: function(){
         document.getElementById("class-panel").classList.add("hidden");

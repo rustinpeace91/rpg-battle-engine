@@ -6,12 +6,24 @@ import classes from "./classes";
 var game = {
     player: {},
     enemy: {},
-    init: function(){
-        // when the function runs, both a new player character and a new enemy spawn with random weapons and HP
+    classDisplay: function(){
         classes.forEach(function(e){
             dom.classButton(e.name);
-        })
-        this.player = charGen.generateHero("player", "random", 1);
+        });
+        this.classSelect();
+    },
+
+    classSelect: function(){
+        function characterSelect(characterClass){
+            this.init(characterClass);
+            dom.classSelected();
+        }
+    },
+
+    init: function(characterClass){
+        // when the function runs, both a new player character and a new enemy spawn with random weapons and HP
+
+        this.player = charGen.generateHero("player", characterClass, 1);
         this.enemy = charGen.generateEnemy("bad guy", 3);
         // REMOVE //
         console.log(this.player);
