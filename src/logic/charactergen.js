@@ -36,7 +36,7 @@ var charGen = {
             case "brawler":
                 hero.HP += dice.throwD10();
                 break;
-            case "peasent with a stick":
+            case "peasent":
                 hero.HP += dice.throwD6();
                 hero.weapon = armory.weapon.club;
                 hero.restat();
