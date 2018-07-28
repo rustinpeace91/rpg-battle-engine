@@ -40,7 +40,7 @@ var dom = {
         
     },
     classSelected: function(){
-        document.getElementById("class-panel").classList.add("hidden");
+        document.getElementById("class-panel").style.display = "none"
         document.getElementById("class-panel").classList.remove("flex");
     }
 }
