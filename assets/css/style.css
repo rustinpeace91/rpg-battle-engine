@@ -4,8 +4,6 @@
 }
 
 #class-panel {
-    display:flex;
-    flex-wrap:wrap;
 }
 
 #gameplay-window, #title-bar, #subtext, h4, .button, #fight-console {
@@ -46,6 +44,12 @@ button{
     font-weight:bold;
 }
 
-.hidden{
-    display:hidden;
-}
+.flex {
+    /* display:flex;
+    flex-wrap:wrap; */
+
+};
+
+.hidden {
+    display:none;
+};

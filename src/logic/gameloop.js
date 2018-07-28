@@ -13,11 +13,9 @@ var game = {
         this.classSelect();
     },
 
-    classSelect: function(){
-        function characterSelect(characterClass){
-            this.init(characterClass);
-            dom.classSelected();
-        }
+    classSelect: function(characterClass){
+        this.init(characterClass);
+        // dom.classSelected();
     },
 
     init: function(characterClass){
