@@ -15,9 +15,17 @@ var armor = {
         toAC: 2
     },
 
-    plate: {
-        name: "plate",
+    scale: {
+        name: "scale",
         toAC: 3,
+    },
+    plate: {
+        name: "scale",
+        toAC: 4,
+    },
+    fullplate: {
+        name: "full plate",
+        toAC: 5,
     }
 }
 

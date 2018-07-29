@@ -7,22 +7,25 @@ var game = {
     player: {},
     enemy: {},
     classDisplay: function(){
+        document.getElementById("class-panel").innerHTML = "";
         classes.forEach(function(e){
             dom.classButton(e.name);
         });
-        this.classSelect();
+        document.getElementById("fight").style.display = "none";
     },
 
     classSelect: function(characterClass){
         this.init(characterClass);
         // dom.classSelected();
+
+
     },
 
     init: function(characterClass){
         // when the function runs, both a new player character and a new enemy spawn with random weapons and HP
 
         this.player = charGen.generateHero("player", characterClass, 1);
-        this.enemy = charGen.generateEnemy("bad guy", 3);
+        this.enemy = charGen.generateEnemy("Goblin", 3);
         // REMOVE //
         console.log(this.player);
         console.log(this.enemy);
@@ -40,7 +43,7 @@ var game = {
             if(game.player.alive === false){
                 dom.updateConsole(game.player.name + " has died")
                 dom.updateConsole("-----------------------------------------------------------------------")
-                game.init();
+                game.classDisplay();
             }else if (game.enemy.alive === false){
                 game.enemy = charGen.generateEnemy("bad guy", 3)
                 console.log(game.enemy);

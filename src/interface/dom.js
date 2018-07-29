@@ -33,15 +33,17 @@ var dom = {
         node.classList.add("character-class");
         node.setAttribute("data-class", characterClass);
         node.addEventListener("click", () => {
-            alert(characterClass);
+            game.classSelect(characterClass);
             this.classSelected();
         });
         document.getElementById("class-panel").appendChild(node);
+        document.getElementById("class-panel").style.display = "inline-block";
         
     },
     classSelected: function(){
         document.getElementById("class-panel").style.display = "none"
         document.getElementById("class-panel").classList.remove("flex");
+        document.getElementById("fight").style.display = "inline-block";
     }
 }
 
