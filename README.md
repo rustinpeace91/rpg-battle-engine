@@ -13,6 +13,19 @@ If you defeat an enemy. You gain experience points. If you die, you respawn with
 
 here are the weapons I have so far:
 
+### Classes:
+As of yet, classes determine your starting HP, weapon and armor. There are four classes
+
+##### Swordsman 
+Easy mode. You are a noble knight with a sword and chainmail armor blah blah blah don't spend it all in one place
+##### Pikeman
+You have a spear and leather armor. Spears give you a +1 to hit. Eventually spears will also give you a +1 to your chance to flee (simulating reach)
+##### Brawler
+You have nothing but your fists, but a lot more HP
+##### Peasent with a stick
+Hard mode. You are armed with a club and not a lot of sense. Have fun dying. 
+
+
 ### Weapons Table:
 | Weapon Name  | Damage Roll |  Accuracy Bonus | 
 | ------------- | ------------- | ------------- |
