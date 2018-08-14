@@ -14,7 +14,7 @@ var classes = [
         url: "assets/"
     },
     { 
-        name: "peasent with a stick",
+        name: "peasent",
         url: "assets/"
     },
     { 

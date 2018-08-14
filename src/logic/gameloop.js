@@ -6,13 +6,25 @@ import classes from "./classes";
 var game = {
     player: {},
     enemy: {},
-    init: function(){
-        // when the function runs, both a new player character and a new enemy spawn with random weapons and HP
+    classDisplay: function(){
+        document.getElementById("class-panel").innerHTML = "";
         classes.forEach(function(e){
             dom.classButton(e.name);
-        })
-        this.player = charGen.generateHero("player", "random", 1);
-        this.enemy = charGen.generateEnemy("bad guy", 3);
+        });
+        document.getElementById("fight").style.display = "none";
+    },
+
+    classSelect: function(characterClass){
+        this.generate(characterClass);
+        // dom.classSelected();
+
+
+    },
+
+    generate: function(characterClass){
+        // when the function runs, both a new player character and a new enemy spawn with random weapons and HP
+        this.player = charGen.generateHero("player", characterClass, 1);
+        this.enemy = charGen.generateEnemy("Goblin", 3);
         // REMOVE //
         console.log(this.player);
         console.log(this.enemy);
@@ -21,16 +33,18 @@ var game = {
         dom.updateConsole("Youve spawned with " + this.player.HP + " hit points armed with a " + this.player.weapon.name);
         dom.updateConsole("In front of you stands a " + this.enemy.name + " with a " + this.enemy.weapon.name)
         dom.updateHUD();
+    },
 
+
+    init: function(characterClass){
         // runs a combat loop every time the player clicks fight
         document.getElementById("fight").addEventListener("click", function(event){
             combat.fight(game.player,game.enemy);
-            
             // need to consolidate this if statement with the if statement in the combat loop. It doesn't make sense to have two  if statements that check for the same thing in two files
             if(game.player.alive === false){
                 dom.updateConsole(game.player.name + " has died")
                 dom.updateConsole("-----------------------------------------------------------------------")
-                game.init();
+                game.classDisplay();
             }else if (game.enemy.alive === false){
                 game.enemy = charGen.generateEnemy("bad guy", 3)
                 console.log(game.enemy);

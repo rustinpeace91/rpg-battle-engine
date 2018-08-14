@@ -21,7 +21,7 @@ var charGen = {
         hero.profession = profession;
         switch(profession){
             case "swordsman" :
-                hero.armor = armor.leather;
+                hero.armor = armor.chain;
                 hero.weapon = armory.weapon.longsword;
                 hero.HP += dice.throwD6();
                 hero.restat();
@@ -36,7 +36,7 @@ var charGen = {
             case "brawler":
                 hero.HP += dice.throwD10();
                 break;
-            case "peasent with a stick":
+            case "peasent":
                 hero.HP += dice.throwD6();
                 hero.weapon = armory.weapon.club;
                 hero.restat();
@@ -62,7 +62,7 @@ var charGen = {
         var selector = parseInt((Math.random() * armory.list.length));
         // HP = d6 rolled the amount of times of the difficulty number
         var HP = dice.multiroll("throwD6", difficulty);
-        var enemy = new CharSheet("bad guy", false, HP);
+        var enemy = new CharSheet(name, false, HP);
         enemy.weapon = armory.weapon[armory.list[selector]];
         return enemy;
 

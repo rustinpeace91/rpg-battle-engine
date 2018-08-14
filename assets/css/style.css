@@ -3,10 +3,6 @@
     flex-wrap:wrap;
 }
 
-#class-panel {
-    display:flex;
-    flex-wrap:wrap;
-}
 
 #gameplay-window, #title-bar, #subtext, h4, .button, #fight-console {
     text-align:center;
@@ -45,3 +41,13 @@ button{
     font-size:18px;
     font-weight:bold;
 }
+
+.flex {
+    /* display:flex;
+    flex-wrap:wrap; */
+
+};
+
+div.hidden button {
+    display:none;
+};
